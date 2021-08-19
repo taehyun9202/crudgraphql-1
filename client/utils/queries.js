@@ -98,3 +98,25 @@ export const GET_ONE_BOOK = gql`
     }
   }
 `;
+export const UPDATE_BOOK = gql`
+  mutation ($id: ID!, $name: String!, $genre: String!, $authorId: ID!) {
+    updateBook(id: $id, name: $name, genre: $genre, authorId: $authorId) {
+      id
+      name
+      genre
+      author {
+        id
+        name
+      }
+    }
+  }
+`;
+
+export const DELETE_ONE_BOOK = gql`
+  mutation ($id: ID!) {
+    deleteBook(id: $id) {
+      id
+      name
+    }
+  }
+`;
